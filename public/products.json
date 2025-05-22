@@ -1,0 +1,178 @@
+[
+    {
+      "id": 1,
+      "name": " עוגת שוקולד קרמית",
+      "description": "עוגת שוקולד רכה עם קרם שוקולד",
+      "price": 45,
+      "image": "dessert2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "עוגת שוקולד עם פטיפור",
+      "description": "עוגת שוקולד רכה עם פטיפור שוקולד",
+      "price": 52,
+      "image": "dessert1.jpg"
+    },
+    {
+        "id": 3,
+        "name": " אייס קפה ",
+        "description": "אייס קפה עם קצפת",
+        "price": 52,
+        "image": "dessert3.jpg"
+      },
+      {
+        "id": 4,
+        "name": "לביבות ",
+        "description": "לביבות תפוחי אדמה עם רוטב שמנת",
+        "price": 52,
+        "image": "dessert6.jpg"
+      },
+      {
+        "id": 5,
+        "name": " פחזניות",
+        "description": "פחזניות ממולאות קרם פטיסייר",
+        "price": 52,
+        "image": "dessert8.jpg"
+      },
+      {
+        "id": 6,
+        "name": "שוקו חם ",
+        "description": "שוקו חם עם קצפת",
+        "price": 52,
+        "image": "dessett4.jpg"
+      },
+      {
+        "id":7,
+        "name": " וופל בלגי",
+        "description": "וופל בלגי עם קצפת ושוקולד",
+        "price": 52,
+        "image": "dessrt5.jpg"
+      },
+      {
+        "id": 8,
+        "name": " לזניה",
+        "description": "לזניה עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "lazanya1.jpg"
+      },
+      {
+        "id": 9,
+        "name": "מרק מיוחד ",
+        "description": "מרק כופתאות  עם גבינה צהובה",
+        "price": 52,
+        "image": "kno1.jpg"
+      },
+      {
+        "id": 10,
+        "name": "לזניה מוקרמת 2 ",
+        "description": "לזניה עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "lazanya2.jpg"
+      },
+      {
+        "id": 11,
+        "name": "פלפל ממולא",
+        "description": "פלפל ממולא באורז ",
+        "price": 52,
+        "image": "lazanya3.jpg"
+      },
+      {
+        "id": 12,
+        "name": "פסטה ",
+        "description": "פסטה ברוטב עגבניות",
+        "price": 52,
+        "image": "pasta1.jpg"
+      },
+      {
+        "id": 13,
+        "name": "פיצה פפרוני",
+        "description": "רוטב עגבניות, מוצרלה ופרוסות פפרוני חריף",
+        "price": 52,
+        "image": "pizz14.jpg"
+      },
+      {
+        "id": 14,
+        "name": "פיצה בקונוס",
+        "description": "פיצה בקונוס עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "pizza3.jpg"
+      },
+      {
+        "id": 15,
+        "name": "פיצה במשולשים",
+        "description": "פיצה במשולשים עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "pizza1.jpg"
+      },
+      {
+        "id": 16,
+        "name": "פיצת מרק ",
+        "description": "פיצה במרק גבניות וגבינה צהובה",
+        "price": 52,
+        "image": "pizza8.jpg"
+      },
+      {
+        "id": 17,
+        "name": "פיצה רגילה",
+        "description": "פיצה עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "pizza5.jpg"
+      },
+      {
+        "id": 18,
+        "name": "פיצה בעיגולים",
+        "description": "פיצה בעיגולים עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "pizza6.jpg"
+      },
+      {
+        "id": 19,
+        "name": "פיצה מיוחדת",
+        "description": "פיצה עם רוטב עגבניות וגבינה צהובה",
+        "price": 52,
+        "image": "pizza10.jpg"
+      },
+    {
+      "id": 20,
+      "name": "פסטה אלפרדו",
+      "description": "פסטה ברוטב שמנת ופרמזן",
+      "price": 42,
+    "image": "pasta4.jpg"
+    },
+    {
+      "id": 21,
+      "name": "פסטה פיקנטי",
+      "description": "פסטה ברוטב עגבניות חריף",
+      "price": 40,
+      "image": "pasta2.jpg"
+    },
+    {
+      "id": 22,
+      "name": "פסטה פירות ים",
+      "description": "פסטה עם פירות ים ורוטב שמנת",
+      "price": 55,
+      "image": "pasta3.jpg"
+    },
+    {
+      "id": 23,
+      "name": "סלט יווני",
+      "description": "סלט ירקות עם גבינת פטה וזיתים",
+      "price": 30,
+      "image": "salad2.jpg"
+
+    },
+    {
+      "id": 24,
+      "name": "סלט קיסר",
+      "description": "סלט חסה עם רוטב קיסר וגבינת פרמזן",
+      "price": 35,
+      "image": "salad9.jpg"
+    },
+    {
+      "id": 25,
+      "name": "סלט טונה",
+      "description": "סלט ירקות עם טונה ורוטב לימון",
+      "price": 32,
+      "image": "salad2.jpg"
+    }
+  ]
