@@ -1,6 +1,3 @@
-
-
-
 import {
   Box,
   Typography,
@@ -13,39 +10,36 @@ import {
   Button,
 } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart, updateQuantity } from '../redux/cartSlice'; // ייבוא הפעולות
+import { removeFromCart, updateQuantity } from '../redux/cartSlice';
 import { useNavigate, Link } from 'react-router-dom';
-import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function CartPage() {
-  const cartItems = useSelector((state) => state.cart); // שליפת סל הקניות מה-Redux
+  const cartItems = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // חישוב סכום כולל
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  // טיפול בשינוי כמות
   const handleQuantityChange = (id, value) => {
     const quantity = Math.max(1, parseInt(value) || 1);
     dispatch(updateQuantity({ id, quantity }));
   };
 
-  // טיפול בהסרת מוצר מהעגלה
   const handleRemove = (id) => {
     dispatch(removeFromCart(id));
   };
 
   return (
-    <Box sx={{ p: 4, maxWidth: 600, mx: 'auto', mt: 5 }}>
-      <Paper elevation={4} sx={{ p: 4, borderRadius: 4 }}>
-        <Button color="primary" component={Link} to="/menu">
-          חזרה לתפריט
-        </Button>
-
-        <Typography variant="h4" mb={3} color="primary" textAlign="center">
-          🛒 סל הקניות שלך
-        </Typography>
+    <Box sx={{ p: 4, maxWidth: 700, mx: 'auto', mt: 6 }}>
+      <Paper elevation={6} sx={{ p: 4, borderRadius: 6, bgcolor: 'background.paper' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+          <Typography variant="h4" color="primary" fontWeight="bold" textAlign="center" flexGrow={1}>
+            🛒 סל הקניות שלך
+          </Typography>
+          <Button color="primary" component={Link} to="/menu" sx={{ fontWeight: 'bold' }}>
+            חזרה לתפריט
+          </Button>
+        </Box>
 
         {cartItems.length === 0 ? (
           <Typography variant="body1" align="center" color="text.secondary">
@@ -57,49 +51,63 @@ export default function CartPage() {
               {cartItems.map((item) => (
                 <ListItem
                   key={item.id}
-                  alignItems="flex-start"
-                  secondaryAction={
-                    <IconButton
-                      edge="end"
-                      aria-label="delete"
-                      color="error"
-                      onClick={() => handleRemove(item.id)}
-                    >
-                      הסר מהעגלה
-                      {/* <DeleteIcon /> */}
-                    </IconButton>
-                  }
+                  sx={{
+                    mb: 2,
+                    px: 3,
+                    py: 2,
+                    border: '1px solid',
+                    borderColor: 'divider',
+                    borderRadius: 3,
+                    bgcolor: 'background.default',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    gap: 1.5,
+                  }}
                 >
-                  <Box sx={{ width: '100%' }}>
-                    <Typography variant="h6" color="secondary">
-                      {item.name}
-                    </Typography>
+                  <Typography variant="h6" color="secondary" fontWeight="bold">
+                    {item.name}
+                  </Typography>
 
-                    <Typography variant="body2" color="text.secondary">
-                      מחיר ליחידה: {item.price} ₪
-                    </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    מחיר ליחידה: {item.price} ₪
+                  </Typography>
 
-                    <TextField
-                      type="number"
-                      label="כמות"
-                      value={item.quantity}
-                      onChange={(e) => handleQuantityChange(item.id, e.target.value)}
-                      inputProps={{ min: 1 }}
-                      size="small"
-                      sx={{ mt: 1, width: 100 }}
-                    />
+                  <TextField
+                    type="number"
+                    label="כמות"
+                    value={item.quantity}
+                    onChange={(e) => handleQuantityChange(item.id, e.target.value)}
+                    inputProps={{ min: 1 }}
+                    size="small"
+                    sx={{ width: 100 }}
+                  />
 
-                    <Typography variant="body1" sx={{ mt: 1 }}>
-                      סה"כ לפריט: {item.price * item.quantity} ₪
-                    </Typography>
-                  </Box>
+                  <Typography variant="body1" color="text.primary">
+                    סה"כ לפריט: {item.price * item.quantity} ₪
+                  </Typography>
+
+                  <Button
+                    variant="outlined"
+                    color="error"
+                    onClick={() => handleRemove(item.id)}
+                    sx={{ alignSelf: 'flex-end', mt: 1 }}
+                  >
+                    הסר מהעגלה
+                  </Button>
                 </ListItem>
               ))}
             </List>
 
-            <Divider sx={{ my: 3 }} />
+            <Divider sx={{ my: 4 }} />
 
-            <Typography variant="h5" textAlign="center" color="primary" fontWeight="bold">
+            <Typography
+              variant="h5"
+              textAlign="center"
+              color="primary"
+              fontWeight="bold"
+              sx={{ mb: 2 }}
+            >
               סה״כ לתשלום: {total} ₪
             </Typography>
 
@@ -108,17 +116,18 @@ export default function CartPage() {
               color="secondary"
               fullWidth
               size="large"
+              onClick={() => navigate('/checkout')}
               sx={{
-                mt: 3,
+                py: 1.5,
                 borderRadius: 3,
                 fontWeight: 'bold',
-                boxShadow: '0 4px 20px rgba(255, 64, 129, 0.4)',
+                fontSize: '1.1rem',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
                 transition: '0.3s',
                 '&:hover': {
-                  backgroundColor: '#ff79a8',
+                  backgroundColor: 'secondary.dark',
                 },
               }}
-              onClick={() => navigate('/checkout')}
             >
               מעבר לתשלום
             </Button>
